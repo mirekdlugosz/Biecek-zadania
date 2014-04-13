@@ -1,0 +1,105 @@
+Rozdział 1
+========================================================
+
+### Zadanie 1.1
+
+Skonstruuj wektor kwadratów liczb od 1 do 100. Następnie używając operatora dzielenia modulo i funkcji factor() zlicz, które cyfry oraz jak często występują na pozycji jedności w wyznaczonych kwadratach.
+
+
+### Zadanie 1.2
+Zbuduj własne tablice trygonometryczne. Przygotuj ramkę danych, w których zebrane będą informacje o wartościach funkcji sinus, cosinus, tangens i cotangens dla kątów: 0∘, 30∘, 45∘, 60∘, 90∘ . Zauważ, że funkcje trygonometryczne w R przyjmują argumenty w radianach.
+
+### Zadanie 1.3
+Przygotuj wektor 30 łańcuchów znaków następującej postaci: liczba.litera, gdzie liczba to kolejne liczby od 1 do 30 a litera to trzy duże litery A, B, C występujące cyklicznie.
+
+### Zadanie 1.4
+Wczytaj zbiór danych daneO i napisz funkcję lub pętlę sprawdzającą typ i klasę każdej kolumny tego zbioru.
+
+### Zadanie 1.5
+Z odczytanej ramki danych daneO wyświetl tylko dane z wierszy o parzystych indeksach.
+
+
+### Zadanie 1.6
+Używając operatorów logicznych wyświetl ze zbioru danych tylko wiersze odpowiadające: pacjentkom starszym niż 50 lat u których wystąpiły przerzuty do węzłów chłonnych (cecha `Wezly.chlonne=1`).
+
+
+### Zadanie 1.7
+Wyświetl nazwy kolumn w zbiorze danych `daneO`, a następnie oblicz długość(liczbę znaków) nazw kolejnych kolumn.
+
+
+### Zadanie 1.8
+Napisz funkcję, która za argumenty przyjmie wektor liczb, a jako wynik zwróci trzy najmniejsze i trzy największe liczby. Jeżeli wejściowy wektor jest krótszy niż trzy liczby, to wyświetlany powinien być napis „za krótki argument”.
+
+
+### Zadanie 1.9
+Zmodyfikuj funkcję z poprzedniego zadania tak, by otrzymywała też drugi argument `ile`, którym można określić liczbę skrajnych wartości wyznaczanych jako wynik. Domyślną wartością tego argumentu powinna być liczba `3`.
+
+### Zadanie 1.10
+Napisz funkcję `poczatek()` przyjmującą za pierwszy argument wektor, macierz lub ramkę a za drugi argument liczbę n. Niech to będzie przeciążona funkcja. Dla wektora powinna ona w wyniku zwracać n pierwszych elementów, dla macierzy i ramki danych powinna zwracać podmacierz o wymiarach n×n.
+
+
+### Zadanie 1.11
+Narysuj funkcję, która w układzie biegunowym ma współrzędne
+$$r = 1 + sin(t)$$
+$$φ = c \cdot t$$
+dla `c = 1`, `c = 0.1` i `c = 2.2`. Zobacz przykład na rysunku 1.6.
+
+**Wskazówka**: trzeba zamienić współrzędne na układ kartezjański przekształceniami:
+$$x = r cos(φ)$$
+$$y = r sin(φ)$$ 
+Autor upierał się, że tego uczą w gimnazjum i takie podpowiedzi są zbędne, ale prawda jest taka, że autor nigdy nie był w gimnazjum.
+
+### Zadanie 1.12
+Używając instrukcji `curve()` narysuj wykres funkcji `f(x) = 2x3 − x2 + 3` na przedziale `[0, 1]`.
+Na wykresie tej funkcji zaznacz punkty odpowiadające wartościom w punktach 0.2 i 0.8, a następnie na wykres nanieś napisy opisujące współrzędne tych punktów. Zobacz przykład na rysunku 1.7.
+
+
+### Zadanie 1.13
+Pod adresem http://www.biecek.pl/R/dane/daneBioTech.csv znajduje się plik tekstowy z danymi. Dane są w formacie tabelarycznym, mają nagłówek, kolejne pola rozdzielane są średnikiem a kropką dziesiętną jest przecinek. Wczytaj te dane do programu R i przypisz je do zmiennej `daneBT`.
+
+
+### Zadanie 1.14
+Z odczytanych w poprzednim zadaniu danych wybierz tylko pierwsze trzy kolumny i pierwsze 10 wierszy. Zapisz ten fragment danych do pliku `maleDane.txt` na dysk c:\ (użytkownicy Linuxa mogą zapisać do innego katalogu). Rozdzielaj kolejne pola znakiem tabulacji a kropką dziesiętną będzie kropka. Sprawdź w dowolnym edytorze tekstowym, co zapisało się do tego pliku.
+
+
+### Zadanie 1.15
+Skonstruuj wektor 100 liczb, który jest symetryczny (tzn. elementy czytane
+od końca tworzą ten sam wektor co elementy czytane od początku). Pierwsze 20 liczb to kolejne liczby naturalne, następnie występuje 10 zer, następnie 20 kolejnych liczb parzystych (pozostałe elementy określone są przez warunek symetrii). Napisz funkcję, która sprawdza czy wektor jest symetryczny i sprawdź czy wygenerowany wektor jest symetryczny.
+
+
+### Zadanie 1.16
+Napisz funkcję `localMin()`, której argumentem będzie ramka danych, a wynikiem będą te wiersze, w których w jakiejkolwiek liczbowej kolumnie występuje wartość najmniejsza dla tej kolumny. Kolumny z wartościami nieliczbowymi nie powinny być brane pod uwagę.
+
+Innymi słowy jeżeli ramka ma trzy kolumny z wartościami liczbowymi, to
+wynikiem powinny być wiersze, w których w pierwszej kolumnie występują
+wartości minimalne dla pierwszej kolumny oraz wiersze, w których w drugiej kolumnie występują wartości minimalne dla drugiej kolumny oraz wiersze, w których w trzeciej kolumnie występują wartości minimalne dla trzeciej kolumny. Odczytaj ramkę danych z zadania 1.13 i sprawdź działanie napisanej funkcji.
+
+
+### Zadanie 1.17
+Poniższa funkcja nie działa poprawnie, powinna wyznaczać kwadraty kolejnych liczb ale tego nie robi. Skopiuj ją do programu R a następnie użyj instrukcji `fix()`, by poprawić funkcję `kwadratyLiczb()`.
+```
+kwadratyLiczb <- function(x) {
+  1:x^2
+}
+```
+
+
+### Zadanie 1.18
+Funkcja `ecdf()`, wyznacza dystrybuantę empiryczną. Przyjrzyj się trzeciej
+linii z poniższego przykładu oraz spróbuj przewidzieć co jest wynikiem tego
+wyrażenia i jaka funkcja jest wywoływana jako druga.
+```
+data(iris)
+x <- iris[,1]
+ecdf(x)(x)
+```
+
+
+### Zadanie 1.19
+Znajdź liczbę x z przedziału `[0 − 1]`, dla którego poniższe wyrażenie zwraca wartość `FALSE`.
+```
+x + 0.1 + 0.1 == 0.1 + 0.1 + x
+```
+
+### Zadanie 1.20
+Dla zbioru danych `iris` narysuj wykres przedstawiający zależność pomiędzy dwoma wybranymi zmiennymi. Użyj funkcji `png()` i `pdf()` aby zapisać ten wykres do pliku.
