@@ -1,7 +1,9 @@
 ```{r setup, echo=FALSE}
-opts_chunk$set(cache=FALSE)
+opts_chunk$set(cache=FALSE, tidy=FALSE)
 read_chunk('tablice.R') # będzie potrzebne do zadania 1.2
 read_chunk('funkcje-przeciazone.R') # będzie potrzebne do zadania 1.10
+read_chunk('wykres-biegunowy.R') # będzie potrzebne do zadania 1.11
+read_chunk('wykres-funkcji.R') # będzie potrzebne do zadania 1.12
 ```
 
 Rozdział 1
@@ -143,13 +145,20 @@ $$φ = c \cdot t$$
 dla `c = 1`, `c = 0.1` i `c = 2.2`. Zobacz przykład na rysunku 1.6.
 
 **Wskazówka**: trzeba zamienić współrzędne na układ kartezjański przekształceniami:
-$$x = r cos(φ)$$
-$$y = r sin(φ)$$ 
+$$x = r \cdot cos(φ)$$
+$$y = r \cdot sin(φ)$$ 
 Autor upierał się, że tego uczą w gimnazjum i takie podpowiedzi są zbędne, ale prawda jest taka, że autor nigdy nie był w gimnazjum.
 
+```{r wykres.biegunowy1.11}
+```
+
+
 ### Zadanie 1.12
-Używając instrukcji `curve()` narysuj wykres funkcji `f(x) = 2x3 − x2 + 3` na przedziale `[0, 1]`.
+Używając instrukcji `curve()` narysuj wykres funkcji $f(x) = 2x^3 − x^2 + 3$ na przedziale `[0, 1]`.
 Na wykresie tej funkcji zaznacz punkty odpowiadające wartościom w punktach 0.2 i 0.8, a następnie na wykres nanieś napisy opisujące współrzędne tych punktów. Zobacz przykład na rysunku 1.7.
+
+```{r wykres.funkcji1.12, fig.height=4, fig.width=6}
+```
 
 
 ### Zadanie 1.13
