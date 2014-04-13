@@ -11,7 +11,7 @@ Rozdział 1
 
 Skonstruuj wektor kwadratów liczb od 1 do 100. Następnie używając operatora dzielenia `modulo` i funkcji `factor()` zlicz, które cyfry oraz jak często występują na pozycji jedności w wyznaczonych kwadratach.
 
-```{r}
+```{r kwadraty.liczb}
 kwadraty <- (1:100)^2
 factor <- factor(kwadraty%%10)
 summary(factor)
@@ -34,7 +34,7 @@ Zbuduj własne tablice trygonometryczne. Przygotuj ramkę danych, w których zeb
 ### Zadanie 1.3
 Przygotuj wektor 30 łańcuchów znaków następującej postaci: liczba.litera, gdzie liczba to kolejne liczby od 1 do 30 a litera to trzy duże litery A, B, C występujące cyklicznie.
 
-```{r}
+```{r lancuchy.znakow}
 lancuchy.znakow <- paste(1:30, c("A","B","C"),sep='.')
 lancuchy.znakow
 ```
@@ -42,7 +42,7 @@ lancuchy.znakow
 ### Zadanie 1.4
 Wczytaj zbiór danych daneO i napisz funkcję lub pętlę sprawdzającą typ i klasę każdej kolumny tego zbioru.
 
-```{r}
+```{r typ.i.klasa}
 #daneO <- read.table("http://biecek.pl/R/dane/daneO.csv", sep=";", header=TRUE)
 daneO <- read.table("daneO.csv", sep=";", header=TRUE)
 
@@ -62,21 +62,21 @@ for (column in names(daneO)) {
 ### Zadanie 1.5
 Z odczytanej ramki danych daneO wyświetl tylko dane z wierszy o parzystych indeksach.
 
-```{r}
+```{r wiersze.parzyste}
 daneO[1:nrow(daneO)%%2 == 0, ]
 ```
 
 ### Zadanie 1.6
 Używając operatorów logicznych wyświetl ze zbioru danych tylko wiersze odpowiadające: pacjentkom starszym niż 50 lat u których wystąpiły przerzuty do węzłów chłonnych (cecha `Wezly.chlonne=1`).
 
-```{r}
+```{r selekcja.przypadkow}
 daneO[(daneO$Wiek > 50) & (daneO$Wezly.chlonne == 1), ]
 ```
 
 ### Zadanie 1.7
 Wyświetl nazwy kolumn w zbiorze danych `daneO`, a następnie oblicz długość(liczbę znaków) nazw kolejnych kolumn.
 
-```{r}
+```{r dlugosc.tekstow}
 invisible(
   lapply(names(daneO), function(x){
     # zamiast `cat` można `paste` - wtedy dane nie zostaną wypisane na STDOUT,
@@ -89,7 +89,7 @@ invisible(
 ### Zadanie 1.8
 Napisz funkcję, która za argumenty przyjmie wektor liczb, a jako wynik zwróci trzy najmniejsze i trzy największe liczby. Jeżeli wejściowy wektor jest krótszy niż trzy liczby, to wyświetlany powinien być napis „za krótki argument”.
 
-```{r}
+```{r najmniejsze.i.najwieksze}
 min_max <- function(x=NULL) {
   if (length(x) < 3) {
     stop("za krótki argument")
@@ -110,7 +110,7 @@ min_max(c(0, 10:15, 100:120))
 ### Zadanie 1.9
 Zmodyfikuj funkcję z poprzedniego zadania tak, by otrzymywała też drugi argument `ile`, którym można określić liczbę skrajnych wartości wyznaczanych jako wynik. Domyślną wartością tego argumentu powinna być liczba `3`.
 
-```{r}
+```{r najmniejsze.i.najwieksze2}
 min_max2 <- function(x=NULL, ile=3) {
   if (length(x) < ile) {
     stop("za krótki argument")
