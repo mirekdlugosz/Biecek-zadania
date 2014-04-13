@@ -1,6 +1,7 @@
 ```{r setup, echo=FALSE}
 opts_chunk$set(cache=FALSE)
 read_chunk('tablice.R') # będzie potrzebne do zadania 1.2
+read_chunk('funkcje-przeciazone.R') # będzie potrzebne do zadania 1.10
 ```
 
 Rozdział 1
@@ -41,28 +42,99 @@ lancuchy.znakow
 ### Zadanie 1.4
 Wczytaj zbiór danych daneO i napisz funkcję lub pętlę sprawdzającą typ i klasę każdej kolumny tego zbioru.
 
+```{r}
+#daneO <- read.table("http://biecek.pl/R/dane/daneO.csv", sep=";", header=TRUE)
+daneO <- read.table("daneO.csv", sep=";", header=TRUE)
+
+lapply(daneO, function(x) {
+  paste("typ: ", mode(x), "; ",
+        "klasa: ", class(x))
+})
+
+# Pętla
+
+for (column in names(daneO)) {
+  print(paste(column, "- typ:", mode(daneO[[paste(column)]]), ";",
+        "klasa:", class(daneO[[paste(column)]])))
+}
+```
+
 ### Zadanie 1.5
 Z odczytanej ramki danych daneO wyświetl tylko dane z wierszy o parzystych indeksach.
 
+```{r}
+daneO[1:nrow(daneO)%%2 == 0, ]
+```
 
 ### Zadanie 1.6
 Używając operatorów logicznych wyświetl ze zbioru danych tylko wiersze odpowiadające: pacjentkom starszym niż 50 lat u których wystąpiły przerzuty do węzłów chłonnych (cecha `Wezly.chlonne=1`).
 
+```{r}
+daneO[(daneO$Wiek > 50) & (daneO$Wezly.chlonne == 1), ]
+```
 
 ### Zadanie 1.7
 Wyświetl nazwy kolumn w zbiorze danych `daneO`, a następnie oblicz długość(liczbę znaków) nazw kolejnych kolumn.
 
+```{r}
+invisible(
+  lapply(names(daneO), function(x){
+    # zamiast `cat` można `paste` - wtedy dane nie zostaną wypisane na STDOUT,
+    # a lapply zwróci listę ciągów znaków
+    cat(x, "liczy sobie", nchar(x), "znaków\n")
+  })
+)
+```
 
 ### Zadanie 1.8
 Napisz funkcję, która za argumenty przyjmie wektor liczb, a jako wynik zwróci trzy najmniejsze i trzy największe liczby. Jeżeli wejściowy wektor jest krótszy niż trzy liczby, to wyświetlany powinien być napis „za krótki argument”.
 
+```{r}
+min_max <- function(x=NULL) {
+  if (length(x) < 3) {
+    stop("za krótki argument")
+  }
+  x <- sort(x, decreasing=FALSE)
+  return(
+    list(
+      min = x[1:3],
+      max = rev(x)[1:3]
+      )
+    )
+}
+
+min_max(c(0,1))
+min_max(c(0, 10:15, 100:120))
+```
 
 ### Zadanie 1.9
 Zmodyfikuj funkcję z poprzedniego zadania tak, by otrzymywała też drugi argument `ile`, którym można określić liczbę skrajnych wartości wyznaczanych jako wynik. Domyślną wartością tego argumentu powinna być liczba `3`.
 
+```{r}
+min_max2 <- function(x=NULL, ile=3) {
+  if (length(x) < ile) {
+    stop("za krótki argument")
+  }
+  x <- sort(x, decreasing=FALSE)
+  return(
+    list(
+      min = x[1:ile],
+      max = rev(x)[1:ile]
+      )
+    )
+}
+
+min_max2(c(0,1))
+min_max2(c(0, 10:15, 100:120))
+min_max2(c(0,1), ile=1)
+min_max2(c(0, 10:15, 100:120), ile=50)
+```
+
 ### Zadanie 1.10
 Napisz funkcję `poczatek()` przyjmującą za pierwszy argument wektor, macierz lub ramkę a za drugi argument liczbę n. Niech to będzie przeciążona funkcja. Dla wektora powinna ona w wyniku zwracać n pierwszych elementów, dla macierzy i ramki danych powinna zwracać podmacierz o wymiarach n×n.
 
+```{r funkcje1.10}
+```
 
 ### Zadanie 1.11
 Narysuj funkcję, która w układzie biegunowym ma współrzędne
