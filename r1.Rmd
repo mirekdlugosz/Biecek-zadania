@@ -1,9 +1,14 @@
+```{r setup, echo=FALSE}
+opts_chunk$set(cache=FALSE)
+read_chunk('tablice.R') # będzie potrzebne do zadania 1.2
+```
+
 Rozdział 1
 ========================================================
 
 ### Zadanie 1.1
 
-Skonstruuj wektor kwadratów liczb od 1 do 100. Następnie używając operatora dzielenia modulo i funkcji factor() zlicz, które cyfry oraz jak często występują na pozycji jedności w wyznaczonych kwadratach.
+Skonstruuj wektor kwadratów liczb od 1 do 100. Następnie używając operatora dzielenia `modulo` i funkcji `factor()` zlicz, które cyfry oraz jak często występują na pozycji jedności w wyznaczonych kwadratach.
 
 ```{r}
 kwadraty <- (1:100)^2
@@ -22,6 +27,8 @@ summary(
 
 ### Zadanie 1.2
 Zbuduj własne tablice trygonometryczne. Przygotuj ramkę danych, w których zebrane będą informacje o wartościach funkcji sinus, cosinus, tangens i cotangens dla kątów: 0∘, 30∘, 45∘, 60∘, 90∘ . Zauważ, że funkcje trygonometryczne w R przyjmują argumenty w radianach.
+```{r tablice1.2}
+```
 
 ### Zadanie 1.3
 Przygotuj wektor 30 łańcuchów znaków następującej postaci: liczba.litera, gdzie liczba to kolejne liczby od 1 do 30 a litera to trzy duże litery A, B, C występujące cyklicznie.
