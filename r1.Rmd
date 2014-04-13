@@ -5,6 +5,7 @@ read_chunk('funkcje-przeciazone.R') # będzie potrzebne do zadania 1.10
 read_chunk('wykres-biegunowy.R') # będzie potrzebne do zadania 1.11
 read_chunk('wykres-funkcji.R') # będzie potrzebne do zadania 1.12
 read_chunk('wektor-symetryczny.R') # zadanie 1.15
+read_chunk('localmin.R') #zadanie 1.16
 ```
 
 Rozdział 1
