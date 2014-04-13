@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Rozdział 1</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Rozdział 1</h1>
+
+<h3>Zadanie 1.1</h3>
+
+<p>Skonstruuj wektor kwadratów liczb od 1 do 100. Następnie używając operatora dzielenia <code>modulo</code> i funkcji <code>factor()</code> zlicz, które cyfry oraz jak często występują na pozycji jedności w wyznaczonych kwadratach.</p>
+
+<h3>Zadanie 1.2</h3>
+
+<p>Zbuduj własne tablice trygonometryczne. Przygotuj ramkę danych, w których zebrane będą informacje o wartościach funkcji sinus, cosinus, tangens i cotangens dla kątów: 0∘, 30∘, 45∘, 60∘, 90∘ . Zauważ, że funkcje trygonometryczne w R przyjmują argumenty w radianach.</p>
+
+<h3>Zadanie 1.3</h3>
+
+<p>Przygotuj wektor 30 łańcuchów znaków następującej postaci: liczba.litera, gdzie liczba to kolejne liczby od 1 do 30 a litera to trzy duże litery A, B, C występujące cyklicznie.</p>
+
+<h3>Zadanie 1.4</h3>
+
+<p>Wczytaj zbiór danych daneO i napisz funkcję lub pętlę sprawdzającą typ i klasę każdej kolumny tego zbioru.</p>
+
+<h3>Zadanie 1.5</h3>
+
+<p>Z odczytanej ramki danych daneO wyświetl tylko dane z wierszy o parzystych indeksach.</p>
+
+<h3>Zadanie 1.6</h3>
+
+<p>Używając operatorów logicznych wyświetl ze zbioru danych tylko wiersze odpowiadające: pacjentkom starszym niż 50 lat u których wystąpiły przerzuty do węzłów chłonnych (cecha <code>Wezly.chlonne=1</code>).</p>
+
+<h3>Zadanie 1.7</h3>
+
+<p>Wyświetl nazwy kolumn w zbiorze danych <code>daneO</code>, a następnie oblicz długość(liczbę znaków) nazw kolejnych kolumn.</p>
+
+<h3>Zadanie 1.8</h3>
+
+<p>Napisz funkcję, która za argumenty przyjmie wektor liczb, a jako wynik zwróci trzy najmniejsze i trzy największe liczby. Jeżeli wejściowy wektor jest krótszy niż trzy liczby, to wyświetlany powinien być napis „za krótki argument”.</p>
+
+<h3>Zadanie 1.9</h3>
+
+<p>Zmodyfikuj funkcję z poprzedniego zadania tak, by otrzymywała też drugi argument <code>ile</code>, którym można określić liczbę skrajnych wartości wyznaczanych jako wynik. Domyślną wartością tego argumentu powinna być liczba <code>3</code>.</p>
+
+<h3>Zadanie 1.10</h3>
+
+<p>Napisz funkcję <code>poczatek()</code> przyjmującą za pierwszy argument wektor, macierz lub ramkę a za drugi argument liczbę n. Niech to będzie przeciążona funkcja. Dla wektora powinna ona w wyniku zwracać n pierwszych elementów, dla macierzy i ramki danych powinna zwracać podmacierz o wymiarach n×n.</p>
+
+<h3>Zadanie 1.11</h3>
+
+<p>Narysuj funkcję, która w układzie biegunowym ma współrzędne
+\[ r = 1 + sin(t) \]
+\[ φ = c \cdot t \]
+dla <code>c = 1</code>, <code>c = 0.1</code> i <code>c = 2.2</code>. Zobacz przykład na rysunku 1.6.</p>
+
+<p><strong>Wskazówka</strong>: trzeba zamienić współrzędne na układ kartezjański przekształceniami:
+\[ x = r cos(φ) \]
+\[ y = r sin(φ) \] 
+Autor upierał się, że tego uczą w gimnazjum i takie podpowiedzi są zbędne, ale prawda jest taka, że autor nigdy nie był w gimnazjum.</p>
+
+<h3>Zadanie 1.12</h3>
+
+<p>Używając instrukcji <code>curve()</code> narysuj wykres funkcji <code>f(x) = 2x3 − x2 + 3</code> na przedziale <code>[0, 1]</code>.
+Na wykresie tej funkcji zaznacz punkty odpowiadające wartościom w punktach 0.2 i 0.8, a następnie na wykres nanieś napisy opisujące współrzędne tych punktów. Zobacz przykład na rysunku 1.7.</p>
+
+<h3>Zadanie 1.13</h3>
+
+<p>Pod adresem <a href="http://www.biecek.pl/R/dane/daneBioTech.csv">http://www.biecek.pl/R/dane/daneBioTech.csv</a> znajduje się plik tekstowy z danymi. Dane są w formacie tabelarycznym, mają nagłówek, kolejne pola rozdzielane są średnikiem a kropką dziesiętną jest przecinek. Wczytaj te dane do programu R i przypisz je do zmiennej <code>daneBT</code>.</p>
+
+<h3>Zadanie 1.14</h3>
+
+<p>Z odczytanych w poprzednim zadaniu danych wybierz tylko pierwsze trzy kolumny i pierwsze 10 wierszy. Zapisz ten fragment danych do pliku <code>maleDane.txt</code> na dysk c:\ (użytkownicy Linuxa mogą zapisać do innego katalogu). Rozdzielaj kolejne pola znakiem tabulacji a kropką dziesiętną będzie kropka. Sprawdź w dowolnym edytorze tekstowym, co zapisało się do tego pliku.</p>
+
+<h3>Zadanie 1.15</h3>
+
+<p>Skonstruuj wektor 100 liczb, który jest symetryczny (tzn. elementy czytane
+od końca tworzą ten sam wektor co elementy czytane od początku). Pierwsze 20 liczb to kolejne liczby naturalne, następnie występuje 10 zer, następnie 20 kolejnych liczb parzystych (pozostałe elementy określone są przez warunek symetrii). Napisz funkcję, która sprawdza czy wektor jest symetryczny i sprawdź czy wygenerowany wektor jest symetryczny.</p>
+
+<h3>Zadanie 1.16</h3>
+
+<p>Napisz funkcję <code>localMin()</code>, której argumentem będzie ramka danych, a wynikiem będą te wiersze, w których w jakiejkolwiek liczbowej kolumnie występuje wartość najmniejsza dla tej kolumny. Kolumny z wartościami nieliczbowymi nie powinny być brane pod uwagę.</p>
+
+<p>Innymi słowy jeżeli ramka ma trzy kolumny z wartościami liczbowymi, to
+wynikiem powinny być wiersze, w których w pierwszej kolumnie występują
+wartości minimalne dla pierwszej kolumny oraz wiersze, w których w drugiej kolumnie występują wartości minimalne dla drugiej kolumny oraz wiersze, w których w trzeciej kolumnie występują wartości minimalne dla trzeciej kolumny. Odczytaj ramkę danych z zadania 1.13 i sprawdź działanie napisanej funkcji.</p>
+
+<h3>Zadanie 1.17</h3>
+
+<p>Poniższa funkcja nie działa poprawnie, powinna wyznaczać kwadraty kolejnych liczb ale tego nie robi. Skopiuj ją do programu R a następnie użyj instrukcji <code>fix()</code>, by poprawić funkcję <code>kwadratyLiczb()</code>.</p>
+
+<pre><code>kwadratyLiczb &lt;- function(x) {
+  1:x^2
+}
+</code></pre>
+
+<h3>Zadanie 1.18</h3>
+
+<p>Funkcja <code>ecdf()</code>, wyznacza dystrybuantę empiryczną. Przyjrzyj się trzeciej
+linii z poniższego przykładu oraz spróbuj przewidzieć co jest wynikiem tego
+wyrażenia i jaka funkcja jest wywoływana jako druga.</p>
+
+<pre><code>data(iris)
+x &lt;- iris[,1]
+ecdf(x)(x)
+</code></pre>
+
+<h3>Zadanie 1.19</h3>
+
+<p>Znajdź liczbę x z przedziału <code>[0 − 1]</code>, dla którego poniższe wyrażenie zwraca wartość <code>FALSE</code>.</p>
+
+<pre><code>x + 0.1 + 0.1 == 0.1 + 0.1 + x
+</code></pre>
+
+<h3>Zadanie 1.20</h3>
+
+<p>Dla zbioru danych <code>iris</code> narysuj wykres przedstawiający zależność pomiędzy dwoma wybranymi zmiennymi. Użyj funkcji <code>png()</code> i <code>pdf()</code> aby zapisać ten wykres do pliku.</p>
+
+</body>
+
+</html>
+
