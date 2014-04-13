@@ -197,6 +197,11 @@ kwadratyLiczb <- function(x) {
 }
 ```
 
+```{r funkcja.kwadraty.liczb}
+kwadratyLiczb <- function(x) {
+  (1:x)^2
+}
+```
 
 ### Zadanie 1.18
 Funkcja `ecdf()`, wyznacza dystrybuantę empiryczną. Przyjrzyj się trzeciej
@@ -207,12 +212,21 @@ data(iris)
 x <- iris[,1]
 ecdf(x)(x)
 ```
-
+```{r ecdf.iris, echo=FALSE}
+data(iris)
+x <- iris[,1]
+ecdf(x)(x)
+```
 
 ### Zadanie 1.19
 Znajdź liczbę x z przedziału `[0 − 1]`, dla którego poniższe wyrażenie zwraca wartość `FALSE`.
 ```
 x + 0.1 + 0.1 == 0.1 + 0.1 + x
+```
+
+```{r liczby.spelniajace.kryteria}
+x <- seq(0, 1, by=0.01)
+x[ !(x + 0.1 + 0.1 == 0.1 + 0.1 + x) ]
 ```
 
 ### Zadanie 1.20
