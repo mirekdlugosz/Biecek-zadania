@@ -231,3 +231,13 @@ x[ !(x + 0.1 + 0.1 == 0.1 + 0.1 + x) ]
 
 ### Zadanie 1.20
 Dla zbioru danych `iris` narysuj wykres przedstawiający zależność pomiędzy dwoma wybranymi zmiennymi. Użyj funkcji `png()` i `pdf()` aby zapisać ten wykres do pliku.
+
+```{r wykres.iris, fig.height=4, fig.width=4}
+invisible(
+  lapply(
+    names(iris[, -length(iris)]), function(x) {
+      boxplot(iris[[x]] ~ iris$Species, main=paste(x, "~ iris$Species")) 
+    }
+  )
+)
+```
