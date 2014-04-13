@@ -5,6 +5,20 @@ Rozdział 1
 
 Skonstruuj wektor kwadratów liczb od 1 do 100. Następnie używając operatora dzielenia modulo i funkcji factor() zlicz, które cyfry oraz jak często występują na pozycji jedności w wyznaczonych kwadratach.
 
+```{r}
+kwadraty <- (1:100)^2
+factor <- factor(kwadraty%%10)
+summary(factor)
+
+# Lub:
+
+summary(
+  factor(
+    ((1:100)^2)%%10
+    )
+  )
+
+```
 
 ### Zadanie 1.2
 Zbuduj własne tablice trygonometryczne. Przygotuj ramkę danych, w których zebrane będą informacje o wartościach funkcji sinus, cosinus, tangens i cotangens dla kątów: 0∘, 30∘, 45∘, 60∘, 90∘ . Zauważ, że funkcje trygonometryczne w R przyjmują argumenty w radianach.
