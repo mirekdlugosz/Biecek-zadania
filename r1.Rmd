@@ -33,6 +33,11 @@ Zbuduj własne tablice trygonometryczne. Przygotuj ramkę danych, w których zeb
 ### Zadanie 1.3
 Przygotuj wektor 30 łańcuchów znaków następującej postaci: liczba.litera, gdzie liczba to kolejne liczby od 1 do 30 a litera to trzy duże litery A, B, C występujące cyklicznie.
 
+```{r}
+lancuchy.znakow <- paste(1:30, c("A","B","C"),sep='.')
+lancuchy.znakow
+```
+
 ### Zadanie 1.4
 Wczytaj zbiór danych daneO i napisz funkcję lub pętlę sprawdzającą typ i klasę każdej kolumny tego zbioru.
 
