@@ -3,11 +3,12 @@
 localMin <- function(data=NULL) {
   rows <- unique(
     unlist(
-      apply(
-        data, 2, function(x) 
-          if (!is.na(as.numeric(x))) {
-            match(x=min(x), x)
+      lapply(
+        data, function(x) {
+          if (is.numeric(x)) {
+            match(min(x), x)
           }
+        }
       ), use.names=FALSE
     )
   )
