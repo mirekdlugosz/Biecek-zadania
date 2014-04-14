@@ -79,3 +79,74 @@ liczb od 1 do 10.
 
 Odczytaj ramkę danych z zadania 1.13. Następnie wyznacz histogram dla
 zmiennej `Wiek` i zapisz go do pliku `hist.pdf` w wymiarach 5 × 5 cali.
+
+### Zadanie 2.9
+
+Pod adresem http://money.pl/ można odczytać aktualne wartości indeksów
+giełdowych. Wczytaj zawartość tej strony do programu R, a następnie
+wyciągnij z niej dane o nazwie i wartościach indeksów.
+
+Zauważ, że w treści HTML tabela z nazwami i wartościami indeksów rozpoczyna
+się od linii `<table id="tgpw" class="tabela">`.
+
+### Zadanie 2.10
+
+Używając profilera próbuj przyśpieszyć poniższy fragment kodu. Sprawdź,
+które instrukcje są czasochłonne i zastąp je szybszymi. Następnie sprawdź
+jak bardzo udało Ci się przyśpieszyć ten kod.
+
+```
+Rprof("profiler.out", interval = 0.01, memory.profiling=TRUE)
+wyniki = NULL
+for (i in 1:10000) {
+	wektorX <- rnorm(20)
+	wektorY <- rnorm(20)
+	wyniki[i] <- cor(wektorX, wektorY)
+}
+Rprof(NULL)
+summaryRprof("profiler.out", memory="both")
+```
+
+**Wskazówka:** Funkcja `cor()` wywołuje masę dodatkowych funkcji, a tylko jedną niezbędną, czyli `Internal()`.
+
+### Zadanie 2.11
+
+Napisz funkcję `test()`, której argumentem będzie komenda do sprawdzenia.
+Funkcja `test()` powinna wykonać daną komendę. Jeżeli zakończy się
+ona błędem to funkcja `test()` powinna wypisać na ekranie napis `KLAPA`,
+a jeżeli wykonanie będzie bezbłędne, to powinien pojawić się napis `SUKCES`.
+Przykładowe wywołanie `test(cor(1))` powinno spowodować wyświetlenie
+napisu `KLAPA`.
+
+### Zadanie 2.12
+
+Znajdź miejsca zerowe wielomianu $x^3 − 3x^2 − x + 3$. Znajdź najmniejszy
+wspólny dzielnik tego wielomianu i $x^3 − 12x^2 − x + 12$.
+
+### Zadanie 2.13
+
+Używając funkcji `head()` i `by()` dla zbioru danych z zadania 1.13 wyświetl
+trzy pierwsze wiersze danych dla mężczyzn i trzy pierwsze wiersze danych
+dla kobiet.
+
+### Zadanie 2.14
+
+Jeżeli argumentem funkcji `diag()` jest macierz, to wynikiem jest wektor wartości
+z przekątnej. Napisz funkcję `diag2()` przyjmującą dwa argumenty. Pierwszym
+będzie macierz danych a drugim liczba. Wynikiem będzie przekątna
+przesunięta o wartość drugiego argumentu. Przykładowo, jeżeli drugi argument
+będzie miał wartość 0, to wynikiem będzie główna przekątna, jeżeli
+będzie miał wartość 1, to wynikiem będą elementy położone bezpośrednio
+nad główną przekątną, jeżeli wartość 2, to wyniki położone dwa wiersze ponad
+główną przekątną itp.
+
+### Zadanie 2.15
+
+Napisz funkcję wyświetlającą nazwy 10 zmiennych zajmujących najwięcej
+pamięci w przestrzeni roboczej R.
+
+### Zadanie 2.16
+
+Pod adresem http://www.biecek.pl/R/dane/daneBioTech.xls znajduje
+się plik z danymi w formacie programu Excel. Skopiuj ten plik na dysk twardy,
+a następnie odczytaj dane z obu zakładek.
