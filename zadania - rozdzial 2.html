@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Rozdział 2</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+<!-- MathJax scripts -->
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+</head>
+
+<body>
+<h1>Rozdział 2</h1>
+
+<h3>Zadanie 2.1</h3>
+
+<p>Odczytaj ramkę danych z zadania 1.13. Następnie zamień dane liczbowe
+z kolumny <code>Wiek</code> na zmienną czynnikową, dzieląc pacjentki na 3 grupy: o wieku
+do 45 lat, o wieku powyżej 55 lat i o wieku pośrednim. Poziomy tej zmiennej
+powinny nazywać się następująco: <code>&quot;wiek &lt;45&quot;, &quot;45&lt;= wiek &lt;=55&quot;,
+&quot;wiek &gt;55&quot;</code>. Następnie wyświetl macierz kontyngencji dla tej zmiennej i dla
+pary zmiennych wieku oraz dla płci. Dodaj do macierzy sumy brzegowe.
+Wyświetl płaską macierz kontyngencji dla trójki zmiennych czynnikowych,
+dwóch powyższych i jeszcze zmiennej <code>WIT</code>.</p>
+
+<h3>Zadanie 2.2</h3>
+
+<p>Pod adresem <a href="http://www.biecek.pl/R/dane/imieniny.txt">http://www.biecek.pl/R/dane/imieniny.txt</a> znajduje się
+plik tekstowy z imionami i datami imienin dla kolejnych imion. Plik jest
+w dosyć kłopotliwym formacie, mianowicie w każdym wierszu w pierwszej
+pozycji znajduje się imię, a po nim występują daty imienin. Wszystkie te
+pola rozdzielone są spacją. Ponieważ jednak różne imiona mają różne liczby
+imienin dane te nie są w postaci tabelarycznej. Odczytaj dane tak, by każdy
+wiersz był jednym elementem (można np. za separator wskazać ; nie występuje
+on w tym pliku, cała linia zostanie więc traktowana jako jeden element).
+Sprawdź ile imion znajduje się w tym pliku z danymi.</p>
+
+<h3>Zadanie 2.3</h3>
+
+<p>Po odczytaniu danych z zadania 2.2 użyj <code>strsplit()</code> i <code>sapply()</code>, by z odczytanych
+danych wydobyć tylko informacje o imionach. Zlicz liczby znaków w
+kolejnych imionach i wyznacz macierz kontyngencji opisującą ile imion ma
+określoną długość. Sprawdź, które imię ma najwięcej znaków i które imiona
+mają najmniej znaków. Większość imion żeńskich kończy się literą &#39;a&#39;, 
+wykorzystując tę informację zlicz liczbę żeńskich imion. Sprawdź ile liter rozpoczyna się
+literą A, ile B, ile C itp. Sprawdź, które imiona kończą się sufixem <code>anna</code>. 
+Polskie litery występujące w imionach zamień na odpowiedniki
+łacińskie, np. ą na a, ź na z itp. Sprawdź, ile imion zawierało polskie litery.</p>
+
+<h3>Zadanie 2.4</h3>
+
+<p>Po odczytaniu danych z powyższego zadania sprawdź, kto ma imieniny 30
+października. Wyświetl te imiona w porządku leksykograficznym. Sprawdź, 
+które imię ma najczęściej imieniny. Sprawdź, w którym dniu roku najwięcej
+imion ma imieniny. Sprawdź, w którym dniu miesiąca a następnie, w którym
+miesiącu najwięcej imion ma imieniny.</p>
+
+<p>Na bazie wszystkich imion zrób analizę używalności poszczególnych liter.
+Która litera jest najpopularniejsza? Dlaczego?</p>
+
+<h3>Zadanie 2.5</h3>
+
+<p>Odczytaj ramkę danych z zadania 1.13. Następnie używając funkcji <code>by()</code> wyświetl
+podsumowanie zmiennej <code>Wiek</code> osobno dla <code>grupy WIT=brak</code> i dla grupy
+<code>WIT=obecny</code>.</p>
+
+<h3>Zadanie 2.6</h3>
+
+<p>Wyznacz wyznacznik, wartości własne oraz wektory własne macierzy:</p>
+
+<p>\[ 
+\left[ \begin{array}{ccc}
+1 & 5 & 3\\
+2 & 0 & 5\\
+1 & 2 & 1\end{array} \right]
+ \]</p>
+
+<h3>Zadanie 2.7</h3>
+
+<p>Używając funkcji <code>outer()</code> zbuduj i wyświetl na ekranie tabliczkę mnożenia
+liczb od 1 do 10.</p>
+
+<h3>Zadanie 2.8</h3>
+
+<p>Odczytaj ramkę danych z zadania 1.13. Następnie wyznacz histogram dla
+zmiennej <code>Wiek</code> i zapisz go do pliku <code>hist.pdf</code> w wymiarach 5 × 5 cali.</p>
+
+<h3>Zadanie 2.9</h3>
+
+<p>Pod adresem <a href="http://money.pl/">http://money.pl/</a> można odczytać aktualne wartości indeksów
+giełdowych. Wczytaj zawartość tej strony do programu R, a następnie
+wyciągnij z niej dane o nazwie i wartościach indeksów.</p>
+
+<p>Zauważ, że w treści HTML tabela z nazwami i wartościami indeksów rozpoczyna
+się od linii <code>&lt;table id=&quot;tgpw&quot; class=&quot;tabela&quot;&gt;</code>.</p>
+
+<h3>Zadanie 2.10</h3>
+
+<p>Używając profilera próbuj przyśpieszyć poniższy fragment kodu. Sprawdź,
+które instrukcje są czasochłonne i zastąp je szybszymi. Następnie sprawdź
+jak bardzo udało Ci się przyśpieszyć ten kod.</p>
+
+<pre><code>Rprof(&quot;profiler.out&quot;, interval = 0.01, memory.profiling=TRUE)
+wyniki = NULL
+for (i in 1:10000) {
+    wektorX &lt;- rnorm(20)
+    wektorY &lt;- rnorm(20)
+    wyniki[i] &lt;- cor(wektorX, wektorY)
+}
+Rprof(NULL)
+summaryRprof(&quot;profiler.out&quot;, memory=&quot;both&quot;)
+</code></pre>
+
+<p><strong>Wskazówka:</strong> Funkcja <code>cor()</code> wywołuje masę dodatkowych funkcji, a tylko jedną niezbędną, czyli <code>Internal()</code>.</p>
+
+<h3>Zadanie 2.11</h3>
+
+<p>Napisz funkcję <code>test()</code>, której argumentem będzie komenda do sprawdzenia.
+Funkcja <code>test()</code> powinna wykonać daną komendę. Jeżeli zakończy się
+ona błędem to funkcja <code>test()</code> powinna wypisać na ekranie napis <code>KLAPA</code>,
+a jeżeli wykonanie będzie bezbłędne, to powinien pojawić się napis <code>SUKCES</code>.
+Przykładowe wywołanie <code>test(cor(1))</code> powinno spowodować wyświetlenie
+napisu <code>KLAPA</code>.</p>
+
+<h3>Zadanie 2.12</h3>
+
+<p>Znajdź miejsca zerowe wielomianu \( x^3 − 3x^2 − x + 3 \). Znajdź najmniejszy
+wspólny dzielnik tego wielomianu i \( x^3 − 12x^2 − x + 12 \).</p>
+
+<h3>Zadanie 2.13</h3>
+
+<p>Używając funkcji <code>head()</code> i <code>by()</code> dla zbioru danych z zadania 1.13 wyświetl
+trzy pierwsze wiersze danych dla mężczyzn i trzy pierwsze wiersze danych
+dla kobiet.</p>
+
+<h3>Zadanie 2.14</h3>
+
+<p>Jeżeli argumentem funkcji <code>diag()</code> jest macierz, to wynikiem jest wektor wartości
+z przekątnej. Napisz funkcję <code>diag2()</code> przyjmującą dwa argumenty. Pierwszym
+będzie macierz danych a drugim liczba. Wynikiem będzie przekątna
+przesunięta o wartość drugiego argumentu. Przykładowo, jeżeli drugi argument
+będzie miał wartość 0, to wynikiem będzie główna przekątna, jeżeli
+będzie miał wartość 1, to wynikiem będą elementy położone bezpośrednio
+nad główną przekątną, jeżeli wartość 2, to wyniki położone dwa wiersze ponad
+główną przekątną itp.</p>
+
+<h3>Zadanie 2.15</h3>
+
+<p>Napisz funkcję wyświetlającą nazwy 10 zmiennych zajmujących najwięcej
+pamięci w przestrzeni roboczej R.</p>
+
+<h3>Zadanie 2.16</h3>
+
+<p>Pod adresem <a href="http://www.biecek.pl/R/dane/daneBioTech.xls">http://www.biecek.pl/R/dane/daneBioTech.xls</a> znajduje
+się plik z danymi w formacie programu Excel. Skopiuj ten plik na dysk twardy,
+a następnie odczytaj dane z obu zakładek.</p>
+
+</body>
+
+</html>
+
