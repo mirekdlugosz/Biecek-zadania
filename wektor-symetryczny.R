@@ -9,13 +9,9 @@ is.symmetrical <- function(x=NULL) {
   #   2. Porównujemy kolejne elementy wektorów x oraz y
   #   3. Pierwszy negatywny wynik porównania świadczy o tym, 
   #      że wektor nie jest symetryczny
-  # Tutaj tworzymy wektor wartości logicznych (wyników porównania) i poszukujemy
-  # w nim wartości FALSE. Funkcja match zwróci NA, gdy jej nie znajdzie, 
-  # więc ostatecznie wszystko sprowadza się do sprawdzenia, czy wynikiem działania
-  # jest NA
-  if (is.na(match(FALSE, x == rev(x)))) {
-    return(TRUE)
-  } else {
-    return(FALSE)
-  }
+  # Tutaj tworzymy wektor wartości logicznych (wyników porównania) i sprawdzamy, 
+  # czy wszystkie są równe TRUE. Jeżeli tak, wynikiem będzie TRUE. W
+  # przeciwnym wypadku wynikiem będzie FALSE. Jest to o tyle wygodne, że nie
+  # trzeba dodatkowo opakowywać zwracanych wartości.
+  all( x == rev(x) )
 }
