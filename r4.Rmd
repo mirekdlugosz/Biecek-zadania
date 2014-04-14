@@ -1,0 +1,10 @@
+```{r setup, echo=FALSE}
+opts_chunk$set(cache=FALSE, tidy=FALSE)
+# read_chunk('') # placeholder na zewnętrzny skrypt
+```
+
+Rozdział 4
+========================================================
+
+### Zadanie 4.1
+
