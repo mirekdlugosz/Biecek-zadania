@@ -1,0 +1,81 @@
+```{r setup, echo=FALSE}
+opts_chunk$set(cache=FALSE, tidy=FALSE)
+# read_chunk('') # placeholder na zewnętrzny skrypt
+```
+
+Rozdział 2
+========================================================
+
+### Zadanie 2.1
+
+Odczytaj ramkę danych z zadania 1.13. Następnie zamień dane liczbowe
+z kolumny `Wiek` na zmienną czynnikową, dzieląc pacjentki na 3 grupy: o wieku
+do 45 lat, o wieku powyżej 55 lat i o wieku pośrednim. Poziomy tej zmiennej
+powinny nazywać się następująco: `"wiek <45", "45<= wiek <=55",
+"wiek >55"`. Następnie wyświetl macierz kontyngencji dla tej zmiennej i dla
+pary zmiennych wieku oraz dla płci. Dodaj do macierzy sumy brzegowe.
+Wyświetl płaską macierz kontyngencji dla trójki zmiennych czynnikowych,
+dwóch powyższych i jeszcze zmiennej `WIT`.
+
+### Zadanie 2.2
+
+Pod adresem http://www.biecek.pl/R/dane/imieniny.txt znajduje się
+plik tekstowy z imionami i datami imienin dla kolejnych imion. Plik jest
+w dosyć kłopotliwym formacie, mianowicie w każdym wierszu w pierwszej
+pozycji znajduje się imię, a po nim występują daty imienin. Wszystkie te
+pola rozdzielone są spacją. Ponieważ jednak różne imiona mają różne liczby
+imienin dane te nie są w postaci tabelarycznej. Odczytaj dane tak, by każdy
+wiersz był jednym elementem (można np. za separator wskazać ; nie występuje
+on w tym pliku, cała linia zostanie więc traktowana jako jeden element).
+Sprawdź ile imion znajduje się w tym pliku z danymi.
+
+
+### Zadanie 2.3
+
+Po odczytaniu danych z zadania 2.2 użyj `strsplit()` i `sapply()`, by z odczytanych
+danych wydobyć tylko informacje o imionach. Zlicz liczby znaków w
+kolejnych imionach i wyznacz macierz kontyngencji opisującą ile imion ma
+określoną długość. Sprawdź, które imię ma najwięcej znaków i które imiona
+mają najmniej znaków. Większość imion żeńskich kończy się literą 'a', 
+wykorzystując tę informację zlicz liczbę żeńskich imion. Sprawdź ile liter rozpoczyna się
+literą A, ile B, ile C itp. Sprawdź, które imiona kończą się sufixem `anna`. 
+Polskie litery występujące w imionach zamień na odpowiedniki
+łacińskie, np. ą na a, ź na z itp. Sprawdź, ile imion zawierało polskie litery.
+
+### Zadanie 2.4
+
+Po odczytaniu danych z powyższego zadania sprawdź, kto ma imieniny 30
+października. Wyświetl te imiona w porządku leksykograficznym. Sprawdź, 
+które imię ma najczęściej imieniny. Sprawdź, w którym dniu roku najwięcej
+imion ma imieniny. Sprawdź, w którym dniu miesiąca a następnie, w którym
+miesiącu najwięcej imion ma imieniny.
+
+Na bazie wszystkich imion zrób analizę używalności poszczególnych liter.
+Która litera jest najpopularniejsza? Dlaczego?
+
+### Zadanie 2.5
+
+Odczytaj ramkę danych z zadania 1.13. Następnie używając funkcji `by()` wyświetl
+podsumowanie zmiennej `Wiek` osobno dla `grupy WIT=brak` i dla grupy
+`WIT=obecny`.
+
+### Zadanie 2.6
+
+Wyznacz wyznacznik, wartości własne oraz wektory własne macierzy:
+
+$$
+\left[ \begin{array}{ccc}
+1 & 5 & 3\\
+2 & 0 & 5\\
+1 & 2 & 1\end{array} \right]
+$$
+
+### Zadanie 2.7
+
+Używając funkcji `outer()` zbuduj i wyświetl na ekranie tabliczkę mnożenia
+liczb od 1 do 10.
+
+### Zadanie 2.8
+
+Odczytaj ramkę danych z zadania 1.13. Następnie wyznacz histogram dla
+zmiennej `Wiek` i zapisz go do pliku `hist.pdf` w wymiarach 5 × 5 cali.
