@@ -2,14 +2,11 @@
 
 localMin <- function(data=NULL) {
   rows <- unique(
-    unlist(
-      lapply(
-        data, function(x) {
-          if (is.numeric(x)) {
-            match(min(x), x)
-          }
-        }
-      ), use.names=FALSE
+    vapply(
+      data, function(x) {
+        ifelse(is.numeric(x), match(min(x), x), 0)
+      },
+      USE.NAMES=FALSE, FUN.VALUE=numeric(1)
     )
   )
   rows <- rows[order(rows, decreasing=FALSE)]
