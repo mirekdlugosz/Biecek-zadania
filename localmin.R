@@ -9,6 +9,5 @@ localMin <- function(data=NULL) {
       USE.NAMES=FALSE, FUN.VALUE=numeric(1)
     )
   )
-  rows <- rows[order(rows, decreasing=FALSE)]
-  data[rows, ]
+  data[sort(rows, decreasing=FALSE), ]
 }
