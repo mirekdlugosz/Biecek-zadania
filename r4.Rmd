@@ -8,3 +8,55 @@ Rozdział 4
 
 ### Zadanie 4.1
 
+Dla pary zmiennych `cisnienie.skurczowe` i `cisnienie.rozkurczowe` ze zbioru danych `daneSoc` wyznacz histogram dwuwymiarowy.
+Aby poprawić czytelność wybierz odpowiednią liczbę klas.
+
+### Zadanie 4.2
+
+Dla pary zmiennych `Nowotwor` i `Wiek` ze zbioru danych `daneO` wyznacz wykres słonecznikowy.
+
+### Zadanie 4.3
+
+Narysuj macierz wykresów rozrzutu dla zbioru danych `mieszkania`.
+
+### Zadanie 4.4
+
+Dla zmiennych `cisnienie.skurczowe` i `cisnienie.rozkurczowe` ze zbioru danych `daneSoc` wyznacz dwuwymiarową gęstość 
+i narysuj wykres konturowy.
+
+### Zadanie 4.5
+
+Odczytaj ramkę danych z zadania 1.13. Następnie wyznacz macierz korelacji pomiędzy zmiennymi ilościowymi z tego zbioru danych.
+Przedstaw ją z użyciem wykresu mapa ciepła i wykresu `plotcorr()`.
+
+### Zadanie 4.6
+
+W kolumnach 4, 5 i 6 w zbiorze danych z zadania 1.13 znajdują się poziomy zmiennej `Kreatynina` w trzech różnych 
+chwilach czasowych.  Używając funkcji `matplot()` narysuj zmiany tych zmiennych dla pierwszych 5 pacjentów.
+
+### Zadanie 4.7
+
+Napisz funkcję, która za argumenty przyjmie dwa wektory liczb o równej długości. Następnie narysuje na jednym wykresie oba 
+wektory (na osi OX będą kolejne liczby naturalne), każdy z własną osią OY (jedna oś narysowana powinna być po lewej stronie, 
+druga po prawej). Osie, podobnie jak wykresy, powinny być rysowane różnymi kolorami. Patrz przykład na rysunku 4.98.
+
+### Zadanie 4.8
+
+Narysuj dwa wykresy obok siebie. Na lewym wykresie narysuj pięć punktów o losowych współrzędnych (punkty zaznacz gwiazdkami), 
+na prawym narysuj pięć punktów, również o losowych współrzędnych (zaznacz je okręgami). Następnie połącz strzałkami punkty z 
+lewego wykresu z punktami z prawego wykresu (połączenie powinno być dokładne i niezależne od wymiarów urządzenia graficznego). 
+Zobacz przykład na rysunku 4.99.
+
+### Zadanie 4.9
+
+Ze strony http://smarterpoland.pl/index.php/zbiory-danych/ pobierz dane statystyczne cen ofertowych sprzedaży używanych
+samochodów. Następnie przedstaw graficzne zależności pomiędzy wiekiem auta a ceną w podziale na różne marki/modele.
+
+Wykonaj ten wykres używając najpierw funkcji z pakietu `graphics` a następnie `lattice` i ``ggplot`. Z użyciem którego pakietu
+łatwiej było otrzymać wyniki o lepszej jakości?
+
+### Zadanie 4.10
+
+Ze strony http://smarterpoland.pl/index.php/zbiory-danych/ pobierz dane dotyczące nagłówków RSS z różnych portali 
+informacyjnych. Następnie przedstaw graficznie jak z czasem zmienia się częstość używania określonych słów w różnych portalach.
+Porównaj wyniki dla słowa `szok` i `polityk`.
