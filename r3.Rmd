@@ -8,3 +8,95 @@ Rozdział 3
 
 ### Zadanie 3.1
 
+Napisz funkcję `momenty()`, która dla zadanego wektora liczb wyznaczy średnią, wariancję, skośność i kurtozę.
+
+### Zadanie 3.2 
+
+Ze zbioru danych `daneO` wyciągnij zmienną `VEGF` i narysuj dla niej histogram (ile podziałów przyjąć?). 
+Co o zmiennej mówi ten histogram? Zastosuj transformację, która ustabilizuje tę zmienną, 
+a następnie narysuj histogram dla transformowanych danych. Na histogramie zamiast liczebności zaznacz prawdopodobieństwa,
+następnie dorysuj do tego wykresu ocenę gęstości wyznaczoną z użyciem funkcji `density()`.
+
+### Zadanie 3.3
+
+W zbiorze danych `daneO` znajduje się zmienna liczbowa `Wiek` i czynnikowa `Receptory.estrogenowe`. Narysuj wykres pudełkowy
+dla zmiennej `Wiek` w rozbiciu na zmienną `Receptory.estrogenowe`. Narysuj wykres skrzypcowy dla zmiennej `Wiek` w rozbiciu
+na poziomy zmiennej `Niepowodzenia`.
+
+### Zadanie 3.4
+
+Narysuj wykres rozrzutu dla zmiennych `Wiek` i `VEGF` (bez krzywej regresji nieparametrycznej). Czy wykres ten zmieni się, 
+jeżeli zmienne będą podane w innej kolejności? Następnie zmienną `VEGF` narysuj w skali logarytmicznej. 
+Narysuj też wykres rozrzutu dla tych zmiennych w rozbiciu na poziomy zmiennej `Niepowodzenia`.
+
+### Zadanie 3.5
+
+Wygeneruj 20 licz z rozkładu wykładniczego i narysuj dla wygenerowanego wektora dystrybuantę empiryczną. Następnie zrób to samo
+dla wektora 200 i 2000 liczb. Używając funkcji `MASS::fitdistr()` oceń parametr `rate` dla wylosowanego wektora.
+
+### Zadanie 3.6 
+Używając metod analizy wariancji sprawdź, średnia której ze zmiennych ilościowych w zbiorze danych `daneO` 
+różni się w zależności od poziomu zmiennej `Niepowodzenia`. Następnie zbuduj wektor zawierający p-wartość dla 
+wyników z wykonanych analiz.
+
+Zmienna `Receptory.progesteronowe` ma wartości na 4 poziomach. Wykonaj dla niej analizę wariancji oraz testy post hoc.
+
+### Zadanie 3.7
+
+Wykonaj model regresji liniowej dla zmiennych `cisnienie.skurczowe` i `wiek` ze zbioru danych `daneSoc`.
+
+### Zadanie 3.8
+
+Odczytaj ramkę danych z zadania 1.13. Następnie wykonaj model regresji dla zmiennej `Kreatynina.1`, za zmienne zależne wybierz
+`Kreatynina.7` i/lub `Wiek`.
+
+Wyznacz dla tych zmiennych model regresji liniowej, oceń które zmienne są w istotnej statystycznie zależności,
+następnie przedstaw graficznie zależność pomiędzy tymi zmiennymi.
+
+### Zadanie 3.9
+
+Wykorzystując wybrany test statystyczny, sprawdź, która ze zmiennych ilościowych z ramki danych `daneO` ma rozkład istotnie
+różny od normalnego.
+
+### Zadanie 3.10
+
+Wyznacz moc wybranego testu normalności jako funkcję poziomu istotności dla alternatywy w postaci rozkładu jednostajnego
+i dla liczebności próby 50.
+
+### Zadanie 3.11
+
+Sprawdź, które zmienne ilościowe z ramki danych `daneO` są ze sobą istotne statystycznie skorelowane.
+
+### Zadanie 3.12
+
+W zbiorze danych `mieszkania` podziel zmienną `cena` na zmienną jakością opisującą, czy cena jest wyższa od 175 000, a zmienną
+`powierzchnia` podziel na zmienną jakościową opisującą, czy powierzchnia jest większa od $45m^2$.
+
+Następnie wyznacz poznane współczynniki zgodności dla tych zmiennych jakościowych.
+
+### Zadanie 3.13
+
+Napisz funkcję, która dla danego wektora liczb (zakładamy, że są to liczby dodatnie) sprawdza, czy po zastosowaniu 
+transformacji logarytmicznej, odwrotnej lub pierwiastkowej dane nie są "bardziej normalne". Jako wynik funkcja przekazuje
+wektor danych przekształconych albo nie (tak, by uzyskać wektor najbardziej zbliżony do rozkładu normalnego) oraz informację,
+czy i jaką transformację zastosowano. Do badania odległości od rozkładu normalnego wykorzystać można odległość pomiędzy
+dystrybuantami. Uwaga: porównujemy z rodziną rozkładów normalnych a nie jednym rozkładem!
+
+### Zadanie 3.14 
+
+W zbiorze danych `daneO` zmienna `Receptory.estrogenowe` występuje na 4 poziomach, odpowiednio: `(-)`, `(+)`, `(++)`, `(+++)`.
+Wykonaj analizę wariancji dla następujących funkcji kontrastów: porównujący pacjentki bez tych receptorów (grupa `(-)`) z 
+pozostałymi grupami, porównujący pacjentki z brakiem lub słabą ekspresją tych receptorów (grupy `(-)` i `(+)`) 
+z pozostałymi grupami. Uwaga: te kontrasty nie muszą być ortogonalne.
+
+### Zadanie 3.15
+
+Sprawdź, czy w zbiorze danych `daneO` zmienne `Płeć` i `WIT` wpływają na cechę `Kreatynina.7` w sposób addytywny, 
+poprzez interakcję, czy też nie wpływają w żaden sposób. Zilustruj te zależności graficznie.
+
+### Zadanie 3.16
+
+W celu testowania równości średnich w dwóch grupach zaimplementuj następującą dwustopniową procedurę. W pierwszym kroku sprawdź,
+czy w grupach zmienne mają rozkład normalny. Jeżeli tak, to porównaj zmienne testem t-Studenta, jeżeli nie, to porównaj testem
+Wilcoxona. Zbadaj na kilku przykładach, czy ta procedura kontroluje błąd pierwszego rodzaju oraz jaką ma moc w porównaniu
+do testów t-Studenta i Wilcoxona.
