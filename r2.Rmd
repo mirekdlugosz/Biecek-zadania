@@ -37,6 +37,11 @@ wiersz był jednym elementem (można np. za separator wskazać ; nie występuje
 on w tym pliku, cała linia zostanie więc traktowana jako jeden element).
 Sprawdź ile imion znajduje się w tym pliku z danymi.
 
+```{r imieniny2.2}
+imieniny <- scan("imieniny.txt", what="character", sep=";")
+length(imieniny)
+```
+
 
 ### Zadanie 2.3
 
@@ -49,6 +54,41 @@ wykorzystując tę informację zlicz liczbę żeńskich imion. Sprawdź ile lite
 literą A, ile B, ile C itp. Sprawdź, które imiona kończą się sufixem `anna`. 
 Polskie litery występujące w imionach zamień na odpowiedniki
 łacińskie, np. ą na a, ź na z itp. Sprawdź, ile imion zawierało polskie litery.
+
+```{r daneoimionach2.3}
+imieniny.lista <- sapply(strsplit(imieniny, " "), 
+                         function(x) x[1])
+imieniny.dlugosc.imion <- sapply(imieniny.lista, nchar, USE.NAMES = FALSE )
+# tabela kontyngencji długości imion
+as.data.frame(table(imieniny.dlugosc.imion))
+
+# Które imię jest najdłuższe?
+imieniny.lista[imieniny.dlugosc.imion==max(imieniny.dlugosc.imion)]
+
+# Które imiona są najkrótsze?
+imieniny.lista[imieniny.dlugosc.imion==min(imieniny.dlugosc.imion)]
+
+# Ile jest imion żeńskich?
+sum(grepl("a$", x=imieniny.lista))
+
+# Ile imion rozpoczyna się na każdą z liter alfabetu?
+table(
+  sapply(imieniny.lista, 
+         function(x) substr(x, 1, 1),
+         USE.NAMES = FALSE)
+  )
+
+# Które imiona kończą się sufiksem "anna"?
+imieniny.lista[ grep(x=imieniny.lista, pattern="anna$") ]
+
+# Lista imion po transliteracji znaków diakrytycznych
+imieniny.lista.transliteracja <- chartr("ĄĆĘŁŃÓŚŹŻąćęłńóśźż", "ACELNOSZZacelnoszz", imieniny.lista)
+  # Albo zostawmy to ekspertom
+imieniny.lista.transliteracja <- iconv(imieniny.lista, "UTF-8", "LATIN1//TRANSLIT")
+
+# Ile imion zostało poddanych transliteracji w poprzedniej części zadania?
+length(setdiff(imieniny.lista, imieniny.lista.transliteracja))
+```
 
 ### Zadanie 2.4
 
