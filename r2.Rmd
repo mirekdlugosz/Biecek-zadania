@@ -17,6 +17,14 @@ pary zmiennych wieku oraz dla płci. Dodaj do macierzy sumy brzegowe.
 Wyświetl płaską macierz kontyngencji dla trójki zmiennych czynnikowych,
 dwóch powyższych i jeszcze zmiennej `WIT`.
 
+```{r krzyzowki2.1}
+daneBT <- read.csv2('daneBioTech.csv')
+daneBT$Wiek.f <- cut(daneBT$Wiek, breaks=c(0,45,55,Inf), labels=c("wiek <45", "45<= wiek <=55", "wiek >55"))
+(krzyzowa <- table(daneBT$Wiek.f, daneBT$Płeć.K.0.M.1))
+addmargins(krzyzowa)
+ftable(table(daneBT$Płeć.K.0.M.1, daneBT$WIT, daneBT$Wiek.f))
+```
+
 ### Zadanie 2.2
 
 Pod adresem http://www.biecek.pl/R/dane/imieniny.txt znajduje się
