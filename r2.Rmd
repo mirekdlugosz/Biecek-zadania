@@ -1,4 +1,6 @@
 ```{r setup, echo=FALSE}
+library(reshape2)
+library(plyr)
 knitr::opts_chunk$set(cache=FALSE, tidy=FALSE, error=TRUE)
 # knitr::read_chunk('') # placeholder na zewnętrzny skrypt
 ```
@@ -58,7 +60,7 @@ Polskie litery występujące w imionach zamień na odpowiedniki
 ```{r daneoimionach2.3}
 imieniny.lista <- sapply(strsplit(imieniny, " "), 
                          function(x) x[1])
-imieniny.dlugosc.imion <- sapply(imieniny.lista, nchar, USE.NAMES = FALSE )
+imieniny.dlugosc.imion <- nchar(imieniny.lista)
 # tabela kontyngencji długości imion
 as.data.frame(table(imieniny.dlugosc.imion))
 
@@ -100,6 +102,57 @@ miesiącu najwięcej imion ma imieniny.
 
 Na bazie wszystkich imion zrób analizę używalności poszczególnych liter.
 Która litera jest najpopularniejsza? Dlaczego?
+
+```{r imieniny2.4}
+imieniny.lista <- strsplit(imieniny, " ")
+imieniny.imiona <- sapply(imieniny.lista, function(x) x[1])
+
+imieniny.daty <- unlist(imieniny.lista)[!(unlist(imieniny.lista) %in% imieniny.imiona)]
+imieniny.lista <- data.frame(
+  ID = rep(seq_along(imieniny.lista), sapply(imieniny.lista, length)-1),
+  imie=rep(imieniny.imiona, sapply(imieniny.lista, length)-1),
+  data = imieniny.daty 
+  )
+
+# kto ma imieniny 30 października? Wyświetl te imiona w porządku leksykograficznym. 
+
+as.character(
+  dcast(data = imieniny.lista, imie ~ ., subset=.(data=="30.X"))[,1]
+  )
+
+# Sprawdź, które imię ma najczęściej imieniny. 
+
+imieniny.czestosci <- dcast(data = imieniny.lista, imie ~ .)
+imieniny.czestosci[which.max(imieniny.czestosci[,2]),]
+
+# Sprawdź, w którym dniu roku najwięcej imion ma imieniny.
+
+imieniny.czestosci <- dcast(data = imieniny.lista, data ~ .)
+imieniny.czestosci[which.max(imieniny.czestosci[,2]),]
+
+# Sprawdź, w którym dniu miesiąca a następnie, w którym miesiącu najwięcej imion ma imieniny.
+
+imieniny.lista <- cbind(imieniny.lista, 
+              colsplit(imieniny.lista$data, "\\.", c("dzien", "miesiac")) 
+              )
+
+imieniny.czestosci <- dcast(data = imieniny.lista, dzien ~ .)
+imieniny.czestosci[which.max(imieniny.czestosci[,2]),]
+imieniny.czestosci <- dcast(data = imieniny.lista, miesiac ~ .)
+imieniny.czestosci[which.max(imieniny.czestosci[,2]),]
+
+# Na bazie wszystkich imion zrób analizę używalności poszczególnych liter. Która litera jest najpopularniejsza? Dlaczego?
+
+summary(
+  factor(
+    unlist(
+      strsplit(
+        tolower(paste(levels(imieniny.lista$imie), sep='', collapse='')), 
+        '')
+      )
+  )
+)
+```
 
 ### Zadanie 2.5
 
