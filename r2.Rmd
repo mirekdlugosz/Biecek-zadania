@@ -160,6 +160,10 @@ Odczytaj ramkę danych z zadania 1.13. Następnie używając funkcji `by()` wyś
 podsumowanie zmiennej `Wiek` osobno dla `grupy WIT=brak` i dla grupy
 `WIT=obecny`.
 
+```{r summaryby2.5}
+by(daneBT$Wiek, daneBT$WIT, summary)
+```
+
 ### Zadanie 2.6
 
 Wyznacz wyznacznik, wartości własne oraz wektory własne macierzy:
