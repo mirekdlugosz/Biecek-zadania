@@ -298,6 +298,15 @@ główną przekątną itp.
 Napisz funkcję wyświetlającą nazwy 10 zmiennych zajmujących najwięcej
 pamięci w przestrzeni roboczej R.
 
+```{r pamiec2.15}
+obj.sizes <- sapply(ls(.GlobalEnv), function(x)
+                  object.size(get(x))
+              )
+names(
+    sort(obj.sizes, decreasing=TRUE)[1:10]
+  )
+```
+
 ### Zadanie 2.16
 
 Pod adresem http://www.biecek.pl/R/dane/daneBioTech.xls znajduje
