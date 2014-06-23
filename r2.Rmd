@@ -188,6 +188,11 @@ eigen(macierz.szkoleniowa)
 Używając funkcji `outer()` zbuduj i wyświetl na ekranie tabliczkę mnożenia
 liczb od 1 do 10.
 
+```{r tabliczkamnozenia2.7}
+x <- 1:10; names(x) <- x
+outer(x, x, "*")
+```
+
 ### Zadanie 2.8
 
 Odczytaj ramkę danych z zadania 1.13. Następnie wyznacz histogram dla
