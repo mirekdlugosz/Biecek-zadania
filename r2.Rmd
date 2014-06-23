@@ -245,6 +245,20 @@ a jeżeli wykonanie będzie bezbłędne, to powinien pojawić się napis `SUKCES
 Przykładowe wywołanie `test(cor(1))` powinno spowodować wyświetlenie
 napisu `KLAPA`.
 
+```{r exceptions2.11}
+test <- function(x) {
+  result <- try(x,silent=TRUE)
+  if (class(result) == "try-error") {
+    print("KLAPA")
+  } else {
+    print("SUKCES")
+  }
+}
+
+test(cor(1))
+test(cor(1:10,11:20))
+```
+
 ### Zadanie 2.12
 
 Znajdź miejsca zerowe wielomianu $x^3 − 3x^2 − x + 3$. Znajdź najmniejszy
