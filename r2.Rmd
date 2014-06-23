@@ -2,7 +2,7 @@
 library(reshape2)
 library(plyr)
 knitr::opts_chunk$set(cache=FALSE, tidy=FALSE, error=TRUE)
-# knitr::read_chunk('') # placeholder na zewnętrzny skrypt
+knitr::read_chunk('money-index.R')
 ```
 
 Rozdział 2
@@ -143,14 +143,12 @@ imieniny.czestosci[which.max(imieniny.czestosci[,2]),]
 
 # Na bazie wszystkich imion zrób analizę używalności poszczególnych liter. Która litera jest najpopularniejsza? Dlaczego?
 
-summary(
-  factor(
-    unlist(
-      strsplit(
-        tolower(paste(levels(imieniny.lista$imie), sep='', collapse='')), 
-        '')
-      )
-  )
+table(
+  unlist(
+    strsplit(
+      tolower(paste(levels(imieniny.lista$imie), sep='', collapse='')), 
+      '')
+    )
 )
 ```
 
@@ -213,6 +211,9 @@ wyciągnij z niej dane o nazwie i wartościach indeksów.
 
 Zauważ, że w treści HTML tabela z nazwami i wartościami indeksów rozpoczyna
 się od linii `<table id="tgpw" class="tabela">`.
+
+```{r moneyindeks2.9}
+```
 
 ### Zadanie 2.10
 
