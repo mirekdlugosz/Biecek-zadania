@@ -198,6 +198,13 @@ outer(x, x, "*")
 Odczytaj ramkę danych z zadania 1.13. Następnie wyznacz histogram dla
 zmiennej `Wiek` i zapisz go do pliku `hist.pdf` w wymiarach 5 × 5 cali.
 
+```{r histogram.pdf, echo=FALSE}
+#pdf("/tmp/hist.pdf", 5, 5)
+hist(daneBT$Wiek, col="#555555", 
+     main="Wiek badanych kobiet", ylab="Częstość", xlab="Wiek")
+#dev.off()
+```
+
 ### Zadanie 2.9
 
 Pod adresem http://money.pl/ można odczytać aktualne wartości indeksów
