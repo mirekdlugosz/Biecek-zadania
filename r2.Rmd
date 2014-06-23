@@ -278,6 +278,10 @@ Używając funkcji `head()` i `by()` dla zbioru danych z zadania 1.13 wyświetl
 trzy pierwsze wiersze danych dla mężczyzn i trzy pierwsze wiersze danych
 dla kobiet.
 
+```{r byhead2.13}
+by(daneBT, daneBT$Płeć.K.0.M.1, head, 3)
+```
+
 ### Zadanie 2.14
 
 Jeżeli argumentem funkcji `diag()` jest macierz, to wynikiem jest wektor wartości
