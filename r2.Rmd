@@ -4,6 +4,7 @@ library(plyr)
 library(polynom)
 knitr::opts_chunk$set(cache=FALSE, tidy=FALSE, error=TRUE)
 knitr::read_chunk('money-index.R')
+knitr::read_chunk('diag2.R')
 ```
 
 Rozdział 2
@@ -292,6 +293,9 @@ będzie miał wartość 0, to wynikiem będzie główna przekątna, jeżeli
 będzie miał wartość 1, to wynikiem będą elementy położone bezpośrednio
 nad główną przekątną, jeżeli wartość 2, to wyniki położone dwa wiersze ponad
 główną przekątną itp.
+
+```{r diagoffset2.14}
+```
 
 ### Zadanie 2.15
 
