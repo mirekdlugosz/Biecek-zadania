@@ -12,7 +12,7 @@ diag2 <- function(x, offset=0) {
     if (offset > nrow(x))
       return(NA)
     
-    x <- x[-1:offset,]
+    return(diag(x[-1:offset,,drop=FALSE]))
   }
   
   # przekątna NAD główną
@@ -20,13 +20,8 @@ diag2 <- function(x, offset=0) {
     if (offset > ncol(x))
       return(NA)
    
-    x <- x[,-1:-offset]
+    return(diag(x[,-1:-offset,drop=FALSE]))
   }
-  
-  if (is.null(nrow(x)))
-    return(x[1])
-  else
-    return(diag(x))
 }
 
 diag2(matrix(1:16, ncol=4), 2)
