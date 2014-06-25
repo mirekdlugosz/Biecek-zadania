@@ -2,9 +2,10 @@
 library(reshape2)
 library(plyr)
 library(polynom)
-knitr::opts_chunk$set(cache=FALSE, tidy=FALSE, error=TRUE)
+knitr::opts_chunk$set(cache=FALSE, tidy=FALSE, error=TRUE, collapse=TRUE)
 knitr::read_chunk('money-index.R')
 knitr::read_chunk('diag2.R')
+knitr::read_chunk('profiling.R')
 ```
 
 Rozdział 2
@@ -198,7 +199,7 @@ outer(x, x, "*")
 Odczytaj ramkę danych z zadania 1.13. Następnie wyznacz histogram dla
 zmiennej `Wiek` i zapisz go do pliku `hist.pdf` w wymiarach 5 × 5 cali.
 
-```{r histogram.pdf, echo=FALSE}
+```{r histogram.pdf2.8, echo=FALSE}
 #pdf("/tmp/hist.pdf", 5, 5)
 hist(daneBT$Wiek, col="#555555", 
      main="Wiek badanych kobiet", ylab="Częstość", xlab="Wiek")
@@ -236,6 +237,9 @@ summaryRprof("profiler.out", memory="both")
 ```
 
 **Wskazówka:** Funkcja `cor()` wywołuje masę dodatkowych funkcji, a tylko jedną niezbędną, czyli `Internal()`.
+
+```{r profiling.2.10, echo=FALSE}
+```
 
 ### Zadanie 2.11
 
