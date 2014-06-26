@@ -1,4 +1,4 @@
-```{r setup, echo=FALSE, messages=FALSE}
+```{r setup, echo=FALSE, message=FALSE}
 library(reshape2)
 library(plyr)
 library(polynom)
