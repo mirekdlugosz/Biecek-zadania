@@ -1,7 +1,8 @@
-```{r setup, echo=FALSE}
+```{r setup, echo=FALSE, messages=FALSE}
 library(reshape2)
 library(plyr)
 library(polynom)
+library(gdata)
 knitr::opts_chunk$set(cache=FALSE, tidy=FALSE, error=TRUE, collapse=TRUE)
 knitr::read_chunk('money-index.R')
 knitr::read_chunk('diag2.R')
@@ -320,3 +321,11 @@ names(
 Pod adresem http://www.biecek.pl/R/dane/daneBioTech.xls znajduje
 się plik z danymi w formacie programu Excel. Skopiuj ten plik na dysk twardy,
 a następnie odczytaj dane z obu zakładek.
+
+```{r excel2.16}
+excel1 <- read.xls("daneBioTech.xls", sheet=1)
+excel2 <- read.xls("daneBioTech.xls", sheet=2)
+
+head(excel1)
+head(excel2)
+```
